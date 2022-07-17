@@ -199,7 +199,7 @@ class AONet:
 
     def train(self, output_dir='EX-0'):
 
-        print("Initializing VASNet model and optimizer...")
+        print("Initializing Attention model and optimizer...")
         self.model.train()
 
         criterion = nn.MSELoss()
