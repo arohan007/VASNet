@@ -77,8 +77,8 @@ class VASNet(nn.Module):
         self.kc = nn.Linear(in_features=self.kb.out_features, out_features=1024)
         self.kd = nn.Linear(in_features=self.ka.out_features, out_features=1)
 
-        self.sig = nn.Sigmoid()
-        self.tanh = nn.tanh()
+       #self.sig = nn.Sigmoid()
+        self.tanh = nn.Tanh()
         self.relu = nn.ReLU()
         self.drop50 = nn.Dropout(0.5)
         self.softmax = nn.Softmax(dim=0)
