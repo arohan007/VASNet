@@ -78,6 +78,7 @@ class VASNet(nn.Module):
         self.kd = nn.Linear(in_features=self.ka.out_features, out_features=1)
 
         self.sig = nn.Sigmoid()
+        self.tanh = nn.tanh()
         self.relu = nn.ReLU()
         self.drop50 = nn.Dropout(0.5)
         self.softmax = nn.Softmax(dim=0)
@@ -106,7 +107,7 @@ class VASNet(nn.Module):
         y = self.layer_norm_ka(y)
 
         y = self.kd(y)
-        y = self.sig(y)
+        y = self.tanh(y)
         y = y.view(1, -1)
 
         return y, att_weights_
